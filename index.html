@@ -269,6 +269,7 @@ dialog::backdrop{background:rgba(7,14,27,.78);backdrop-filter:blur(4px)}
 :root:not([data-theme="light"]) .summary{color:var(--paper)}
 .summary h3{font-size:20px;font-weight:800}
 .summary .line{display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
+.summary .line b{white-space:nowrap}
 .summary .tot{font:800 30px Montserrat,sans-serif;margin-top:16px}
 .summary .tot small{display:block;font:600 13px Mulish,sans-serif;opacity:.75}
 .summary .btn{width:100%;justify-content:center;margin-top:18px}
@@ -361,8 +362,8 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:14px;text-align:center}
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="track">
-  <span>Go-to-market launches</span><span>Email campaigns</span><span>LinkedIn content</span><span>Social media management</span><span>Brand messaging</span><span>Background screening marketing</span><span>Sales enablement</span><span>Thought leadership</span>
-  <span>Go-to-market launches</span><span>Email campaigns</span><span>LinkedIn content</span><span>Social media management</span><span>Brand messaging</span><span>Background screening marketing</span><span>Sales enablement</span><span>Thought leadership</span>
+  <span>Go-to-market launches</span><span>Email campaigns</span><span>LinkedIn content</span><span>Social media management</span><span>Brand messaging</span><span>Background screening marketing</span><span>Sales enablement</span><span>Thought leadership</span><span>Fractional marketing leadership</span>
+  <span>Go-to-market launches</span><span>Email campaigns</span><span>LinkedIn content</span><span>Social media management</span><span>Brand messaging</span><span>Background screening marketing</span><span>Sales enablement</span><span>Thought leadership</span><span>Fractional marketing leadership</span>
 </div></div>
 
 <section id="results">
@@ -444,17 +445,17 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:14px;text-align:center}
         <div class="svc rv" id="svcLaunch">
           <div class="svc-top">
             <div><h3>Go-to-Market Launch</h3><p>Positioning, messaging, launch plan and a full launch campaign for a new product, service or business.</p></div>
-            <div style="text-align:right"><div class="price">$2,000 <small>one time</small></div><button class="switch" role="switch" aria-checked="false" aria-label="Add Go-to-Market Launch" data-svc="launch" style="margin-top:10px"></button></div>
+            <div style="text-align:right"><div class="price"><small>starting at</small> $2,000 <small>one time</small></div><button class="switch" role="switch" aria-checked="false" aria-label="Add Go-to-Market Launch" data-svc="launch" style="margin-top:10px"></button></div>
           </div>
         </div>
         <div class="svc rv" id="svcSocial">
           <div class="svc-top">
             <div><h3>Social Media Management</h3><p>Content planned, designed, written and posted for you, with monthly results.</p></div>
-            <div class="price">from $750 <small>/ month</small></div>
+            <div class="price">$1,000–$2,000 <small>/ month</small></div>
           </div>
           <div class="tiers" role="radiogroup" aria-label="Social media package">
             <button class="tier" role="radio" aria-checked="true" data-tier="0"><b>None</b><span>$0</span></button>
-            <button class="tier" role="radio" aria-checked="false" data-tier="1"><b>Starter</b><span>$750/mo</span></button>
+            <button class="tier" role="radio" aria-checked="false" data-tier="1"><b>Starter</b><span>$1,000/mo</span></button>
             <button class="tier" role="radio" aria-checked="false" data-tier="2"><b>Growth</b><span>$1,250/mo</span></button>
             <button class="tier" role="radio" aria-checked="false" data-tier="3"><b>Executive</b><span>$2,000/mo</span></button>
           </div>
@@ -462,10 +463,16 @@ footer{padding:36px 0 50px;color:var(--muted);font-size:14px;text-align:center}
         </div>
         <div class="svc rv" id="svcStrategy">
           <div class="svc-top">
-            <div><h3>Marketing Strategy</h3><p>Audits, messaging reviews, sales and marketing alignment, or a thinking partner for your team.</p></div>
+            <div><h3>Marketing &amp; Sales Strategy</h3><p>Audits, messaging reviews, sales and marketing alignment, or a thinking partner for your team. Already included in Go-to-Market Launches and Social Media Management.</p></div>
             <div class="price">$200 <small>/ hour</small></div>
           </div>
-          <div class="slider"><label for="hrs" style="font:700 14px Montserrat,sans-serif">Hours per month</label><input type="range" id="hrs" min="0" max="20" value="0"><output id="hrsOut">0 hrs</output></div>
+          <div class="slider"><label for="hrs" style="font:700 14px Montserrat,sans-serif">Standalone hours per month</label><input type="range" id="hrs" min="0" max="20" value="0"><output id="hrsOut">0 hrs</output></div>
+        </div>
+        <div class="svc rv" id="svcFrac">
+          <div class="svc-top">
+            <div><h3>Fractional Marketing Leadership</h3><p>Senior marketing leadership for your team, part-time. Strategy, team guidance and ownership of your marketing plan, without a full-time hire.</p></div>
+            <div style="text-align:right"><div class="price">Custom <small>quote</small></div><button class="switch" role="switch" aria-checked="false" aria-label="Add Fractional Marketing Leadership" data-svc="frac" style="margin-top:10px"></button></div>
+          </div>
         </div>
       </div>
       <aside class="summary rv" aria-live="polite">
@@ -612,7 +619,7 @@ const Q=[
  {q:"Can you explain what makes you different in one sentence?",o:[["Yes, and the whole team says it the same way",2],["Sort of, it depends who you ask",1],["Honestly, not really",0]],fix:"message"},
  {q:"Where do most new clients come from today?",o:[["A mix of referrals, marketing and outreach",2],["Mostly referrals and word of mouth",1],["We're not sure",0]],fix:"strategy"}
 ];
-const FIX={site:["Your online first impression","Prospects check you out before they ever call. A clear, modern web presence is the fastest win.","Go-to-Market Launch"],social:["A steady social presence","Consistent posting keeps you top of mind. A managed plan takes it off your plate.","Social Media Management"],email:["Email that gets opened","Your list is an asset. Regular, well-designed emails turn it into conversations.","Go-to-Market Launch"],message:["One clear message","When your story is clear, every channel works harder. Start with positioning.","Marketing Strategy"],strategy:["A growth plan beyond referrals","Referrals are great, but they aren't a plan. Let's build a pipeline you control.","Marketing Strategy"]};
+const FIX={site:["Your online first impression","Prospects check you out before they ever call. A clear, modern web presence is the fastest win.","Go-to-Market Launch"],social:["A steady social presence","Consistent posting keeps you top of mind. A managed plan takes it off your plate.","Social Media Management"],email:["Email that gets opened","Your list is an asset. Regular, well-designed emails turn it into conversations.","Go-to-Market Launch"],message:["One clear message","When your story is clear, every channel works harder. Start with positioning.","Marketing & Sales Strategy"],strategy:["A growth plan beyond referrals","Referrals are great, but they aren't a plan. Let's build a pipeline you control.","Marketing & Sales Strategy"]};
 let qi=0,score=0,weak=[];
 function renderQ(){const box=$('#qbox');
  if(qi>=Q.length){const pct=Math.round(score/(Q.length*2)*100);const f=FIX[(weak.sort((a,b)=>a[1]-b[1])[0]||['strategy'])[0]];
@@ -624,21 +631,22 @@ function renderQ(){const box=$('#qbox');
 renderQ();
 
 // plan builder
-const TIERS=[["None",0,"No social media package."],["Starter",750,"8 posts a month · 1 platform · monthly analytics"],["Growth",1250,"12–16 posts a month · up to 3 platforms · community engagement · monthly strategy call"],["Executive",2000,"20+ posts a month · multiple platforms · video content · full strategy support"]];
-let plan={launch:false,tier:0,hrs:0};
+const TIERS=[["None",0,"No social media package."],["Starter",1000,"8 posts a month · 1 platform · monthly analytics"],["Growth",1250,"12–16 posts a month · up to 3 platforms · community engagement · monthly strategy call"],["Executive",2000,"12–15 posts a month · multiple platforms · video content · full strategy support · weekly email · quarterly newsletter"]];
+let plan={launch:false,tier:0,hrs:0,frac:false};
 const fmt=n=>'$'+n.toLocaleString('en-US');
 function upd(){
- $('#svcLaunch').classList.toggle('on',plan.launch);$('#svcSocial').classList.toggle('on',plan.tier>0);$('#svcStrategy').classList.toggle('on',plan.hrs>0);
+ $('#svcLaunch').classList.toggle('on',plan.launch);$('#svcSocial').classList.toggle('on',plan.tier>0);$('#svcStrategy').classList.toggle('on',plan.hrs>0);$('#svcFrac').classList.toggle('on',plan.frac);
  $('#tierDetail').textContent=plan.tier?TIERS[plan.tier][2]:'Pick a package to see what\'s included.';
- const L=[];if(plan.launch)L.push(['Go-to-Market Launch','$2,000 once']);if(plan.tier)L.push(['Social Media · '+TIERS[plan.tier][0],fmt(TIERS[plan.tier][1])+'/mo']);if(plan.hrs)L.push([`Strategy · ${plan.hrs} hrs`,fmt(plan.hrs*200)+'/mo']);
+ const L=[];if(plan.launch)L.push(['Go-to-Market Launch','from $2,000']);if(plan.tier)L.push(['Social Media · '+TIERS[plan.tier][0],fmt(TIERS[plan.tier][1])+'/mo']);if(plan.hrs)L.push([`Strategy · ${plan.hrs} hrs`,fmt(plan.hrs*200)+'/mo']);if(plan.frac)L.push(['Fractional Marketing Leadership','custom quote']);
  $('#lines').innerHTML=L.length?L.map(l=>`<div class="line"><span>${l[0]}</span><b>${l[1]}</b></div>`).join(''):'<div class="empty">Switch on a service to start building.</div>';
- $('#totOne').innerHTML=fmt(plan.launch?2000:0)+'<small>one time</small>';$('#totMo').innerHTML=fmt(TIERS[plan.tier][1]+plan.hrs*200)+'<small>per month</small>';
+ $('#totOne').innerHTML=(plan.launch?'$2,000+':'$0')+'<small>one time'+(plan.launch?' (starting at)':'')+'</small>';$('#totMo').innerHTML=fmt(TIERS[plan.tier][1]+plan.hrs*200)+(plan.frac?' + custom':'')+'<small>per month</small>';
  return L}
+$('[data-svc="frac"]').onclick=e=>{plan.frac=!plan.frac;e.currentTarget.setAttribute('aria-checked',plan.frac);upd()};
 $('[data-svc="launch"]').onclick=e=>{plan.launch=!plan.launch;e.currentTarget.setAttribute('aria-checked',plan.launch);upd()};
 $$('.tier').forEach(t=>t.onclick=()=>{plan.tier=+t.dataset.tier;$$('.tier').forEach(x=>x.setAttribute('aria-checked',x===t));upd()});
 $('#hrs').oninput=e=>{plan.hrs=+e.target.value;$('#hrsOut').textContent=plan.hrs+' hrs';upd()};
 $('#sendPlan').onclick=async()=>{const L=upd();if(!L.length){toast('Add a service first');return}
- const txt='Hi Meghan, I\'d like to talk about this plan:\n'+L.map(l=>'- '+l[0]+': '+l[1]).join('\n')+`\nOne time: ${fmt(plan.launch?2000:0)} | Monthly: ${fmt(TIERS[plan.tier][1]+plan.hrs*200)}\n\nSend to: ms.commsandconsulting@gmail.com`;
+ const txt='Hi Meghan, I\'d like to talk about this plan:\n'+L.map(l=>'- '+l[0]+': '+l[1]).join('\n')+`\nOne time: ${plan.launch?'from $2,000':'$0'} | Monthly: ${fmt(TIERS[plan.tier][1]+plan.hrs*200)}${plan.frac?' + custom quote':''}\n\nSend to: ms.commsandconsulting@gmail.com`;
  toast(await copy(txt)?'Plan copied. Paste it into an email to Meghan.':'Copy failed. Email ms.commsandconsulting@gmail.com');
  location.hash='#contact'};
 upd();
